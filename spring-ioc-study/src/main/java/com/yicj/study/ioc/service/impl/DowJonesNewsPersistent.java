@@ -1,6 +1,6 @@
 package com.yicj.study.ioc.service.impl;
 
-import com.yicj.study.ioc.service.IANNewsPersistent;
+import com.yicj.study.ioc.service.IFXNewsPersistent;
 
 /**
  * ClassName: DowJonesNewsPersistent
@@ -11,5 +11,5 @@ import com.yicj.study.ioc.service.IANNewsPersistent;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
-public class DowJonesNewsPersistent implements IANNewsPersistent {
+public class DowJonesNewsPersistent implements IFXNewsPersistent {
 }

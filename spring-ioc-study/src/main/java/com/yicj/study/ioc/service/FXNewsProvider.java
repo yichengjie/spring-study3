@@ -12,7 +12,35 @@ package com.yicj.study.ioc.service;
  */
 public class FXNewsProvider {
 
-    public void getAndPersistNews() {
+    private IFXNewsListener newsListener ;
+    private IFXNewsPersistent newsPersistent ;
 
+    public FXNewsProvider(IFXNewsListener newsListener,
+                          IFXNewsPersistent newsPersistent){
+        this.newsListener = newsListener ;
+        this.newsPersistent = newsPersistent ;
+    }
+
+
+    public void getAndPersistNews() {
+        System.out.println(newsListener.getClass().getName());
+        System.out.println(newsPersistent.getClass().getName());
+        System.out.println("hello world");
+    }
+
+    public IFXNewsListener getNewsListener() {
+        return newsListener;
+    }
+
+    public void setNewsListener(IFXNewsListener newsListener) {
+        this.newsListener = newsListener;
+    }
+
+    public IFXNewsPersistent getNewsPersistent() {
+        return newsPersistent;
+    }
+
+    public void setNewsPersistent(IFXNewsPersistent newsPersistent) {
+        this.newsPersistent = newsPersistent;
     }
 }

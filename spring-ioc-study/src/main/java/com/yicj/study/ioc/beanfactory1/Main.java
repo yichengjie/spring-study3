@@ -24,9 +24,7 @@ import org.springframework.beans.factory.support.RootBeanDefinition;
 public class Main {
 
     public static void main(String[] args) {
-
         DefaultListableBeanFactory beanRegistry = new DefaultListableBeanFactory() ;
-
         BeanFactory container = bindViaCode(beanRegistry) ;
         FXNewsProvider newsProvider =
                 (FXNewsProvider)container.getBean("djNewsProvider") ;
@@ -50,13 +48,14 @@ public class Main {
         ConstructorArgumentValues argValues = new ConstructorArgumentValues() ;
         argValues.addIndexedArgumentValue(0, newsListener);
         argValues.addIndexedArgumentValue(1, newPersistent);
+        newsProvider.setConstructorArgumentValues(argValues);
         // 或者通过setter方式注入
         MutablePropertyValues propertyValues = new MutablePropertyValues() ;
-        propertyValues.addPropertyValue(new PropertyValue("newListener", newsListener)) ;
-        propertyValues.addPropertyValue(new PropertyValue("newPersistent", newPersistent)) ;
+        propertyValues.addPropertyValue(new PropertyValue("newsListener", newsListener)) ;
+        propertyValues.addPropertyValue(new PropertyValue("newsPersistent", newPersistent)) ;
+        newsProvider.setPropertyValues(propertyValues);
         // 绑定完成
         return (BeanFactory) registry ;
-
     }
 
 }
