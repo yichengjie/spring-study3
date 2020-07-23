@@ -1,4 +1,4 @@
-package com.yicj.study.ioc.beanfactory1;
+package com.yicj.study.ioc.beanfactory.hardcode;
 
 import com.yicj.study.ioc.service.FXNewsProvider;
 import com.yicj.study.ioc.service.impl.DowJonesNewListener;
