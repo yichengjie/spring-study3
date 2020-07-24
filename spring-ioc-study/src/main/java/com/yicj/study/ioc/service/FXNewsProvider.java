@@ -15,6 +15,10 @@ public class FXNewsProvider {
     private IFXNewsListener newsListener ;
     private IFXNewsPersistent newsPersistent ;
 
+    public FXNewsProvider(){
+
+    }
+
     public FXNewsProvider(IFXNewsListener newsListener,
                           IFXNewsPersistent newsPersistent){
         this.newsListener = newsListener ;
