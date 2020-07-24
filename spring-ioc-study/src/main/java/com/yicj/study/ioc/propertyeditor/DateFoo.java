@@ -1,5 +1,9 @@
 package com.yicj.study.ioc.propertyeditor;
 
+import lombok.Data;
+
+import java.util.Date;
+
 /**
  * ClassName: DateFoo
  * Description: TODO(描述)
@@ -9,5 +13,7 @@ package com.yicj.study.ioc.propertyeditor;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
+@Data
 public class DateFoo {
+    private Date date ;
 }

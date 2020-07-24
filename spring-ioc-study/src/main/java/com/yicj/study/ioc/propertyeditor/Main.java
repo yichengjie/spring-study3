@@ -1,5 +1,8 @@
 package com.yicj.study.ioc.propertyeditor;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * ClassName: Main
  * Description: TODO(描述)
@@ -10,4 +13,11 @@ package com.yicj.study.ioc.propertyeditor;
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
 public class Main {
+
+    public static void main(String[] args) {
+        String configLocation = "com/yicj/study/ioc/propertyeditor/beans.xml" ;
+        ApplicationContext context = new ClassPathXmlApplicationContext(configLocation) ;
+        DateFoo bean = context.getBean(DateFoo.class);
+        System.out.println(bean);
+    }
 }
