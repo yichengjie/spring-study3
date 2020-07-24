@@ -5,12 +5,21 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
 
+    <!--
+    spring2.0 之前通常是通过customEditors属性来指定自定义的PropertyEditor。
+    spring2.0 之后比较提倡使用propertyEditorRegistrars属性来指定自定义的PropertyEditor。
+    不过这样我们就需要再多做一步工作，就是给出一个PropertyEditorRegistrar的实现
+    -->
     <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
-        <property name="customEditors">
-            <map>
-                <entry key="java.util.Date" value-ref="datePropertyEditor"/>
-            </map>
+        <property name="propertyEditorRegistrars">
+            <list>
+                <ref bean="dataPropertyEditorRegistrar" />
+            </list>
         </property>
+    </bean>
+
+    <bean id = "dataPropertyEditorRegistrar" class="com.yicj.study.ioc.propertyeditor.client2.DatePropertyEditorRegistrar">
+        <property name="propertyEditor" ref="datePropertyEditor" />
     </bean>
 
     <bean id="datePropertyEditor" class="com.yicj.study.ioc.propertyeditor.DatePropertyEditor">
