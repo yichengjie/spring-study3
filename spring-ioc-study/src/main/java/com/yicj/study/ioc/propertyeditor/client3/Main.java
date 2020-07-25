@@ -1,11 +1,10 @@
 package com.yicj.study.ioc.propertyeditor.client3;
 
-import com.yicj.study.ioc.service.FXNewsProvider;
-import com.yicj.study.ioc.service.impl.DowJonesNewListener;
-import com.yicj.study.ioc.service.impl.DowJonesNewsPersistent;
+import com.yicj.study.ioc.foo.service.FXNewsProvider;
+import com.yicj.study.ioc.foo.service.impl.DowJonesNewListener;
+import com.yicj.study.ioc.foo.service.impl.DowJonesNewsPersistent;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
-import org.springframework.context.annotation.Bean;
 
 /**
  * ClassName: Main

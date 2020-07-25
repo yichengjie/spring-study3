@@ -1,4 +1,4 @@
-package com.yicj.study.ioc.service;
+package com.yicj.study.ioc.foo.service;
 
 /**
  * 设计FXNewsProvider类用于普遍的新闻阅读处理

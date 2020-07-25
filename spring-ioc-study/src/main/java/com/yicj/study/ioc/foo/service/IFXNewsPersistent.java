@@ -1,4 +1,4 @@
-package com.yicj.study.ioc.service;
+package com.yicj.study.ioc.foo.service;
 
 /**
  * 设计IANNewsPersistent接口抽象不同数据访问方式，并实现相应的实现类
