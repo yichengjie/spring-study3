@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+
+    <bean id="mainDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/demo?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT" />
+        <property name="username" value="" />
+        <property name="password" value="root" />
+        <property name="maxActive" value="20" />
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="maxIdle" value="20" />
+        <property name="minIdle" value="3" />
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="1800" />
+        <property name="connectionProperties" value="clientEncoding=GBK" />
+    </bean>
+
+    <bean id="infoDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/user_db?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT" />
+        <property name="username" value="" />
+        <property name="password" value="root" />
+        <property name="maxActive" value="20" />
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="maxIdle" value="20" />
+        <property name="minIdle" value="3" />
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="1800" />
+        <property name="connectionProperties" value="clientEncoding=GBK" />
+    </bean>
+
+    <bean id="dblinkDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/user_center?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT" />
+        <property name="username" value="" />
+        <property name="password" value="root" />
+        <property name="maxActive" value="20" />
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="maxIdle" value="20" />
+        <property name="minIdle" value="3" />
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="1800" />
+        <property name="connectionProperties" value="clientEncoding=GBK" />
+    </bean>
+
+
+    <bean id = "dataSource" class ="com.yicj.study.jdbc.mutidatasource.ThreadLocalVariableRoutingDataSource">
+        <property name = "defaultTargetDataSource" ref ="mainDataSource" />
+        <property name="targetDataSources">
+            <map key-type="com.yicj.study.jdbc.mutidatasource.DataSourceType">
+                <entry key ="MAIN" value-ref ="mainDataSource" />
+                <entry key ="INFO" value-ref ="infoDataSource" />
+                <entry key ="DBLINK" value-ref ="dblinkDataSource"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>
