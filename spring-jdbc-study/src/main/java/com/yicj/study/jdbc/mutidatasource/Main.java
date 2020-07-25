@@ -3,6 +3,10 @@ package com.yicj.study.jdbc.mutidatasource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.Properties;
+
 /**
  * ClassName: Main
  * Description: TODO(描述)
@@ -14,18 +18,24 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml", Main.class) ;
         DataSourceTypeManager.set(DataSourceType.MAIN) ;
-        Object mainDatasource = context.getBean("dataSource");
-        System.out.println(mainDatasource);
+        DataSource mainDatasource = (DataSource)context.getBean("dataSource");
+        String mainCatalog = mainDatasource.getConnection().getCatalog() ;
+        System.out.println(mainCatalog);
 
         DataSourceTypeManager.set(DataSourceType.INFO) ;
-        Object infoDatasource = context.getBean("dataSource");
-        System.out.println(infoDatasource);
+        DataSource infoDatasource = (DataSource)context.getBean("dataSource");
+        String infoCatalog = infoDatasource.getConnection().getCatalog() ;
+        System.out.println(infoCatalog);
 
         DataSourceTypeManager.set(DataSourceType.DBLINK) ;
-        Object dbLinkDasource = context.getBean("dataSource");
-        System.out.println(dbLinkDasource);
+        DataSource dbLinkDasource = (DataSource)context.getBean("dataSource");
+        String dbLinkCatalog = dbLinkDasource.getConnection().getCatalog() ;
+        System.out.println(dbLinkCatalog);
+
+
+
     }
 }
