@@ -1,5 +1,7 @@
-package com.yicj.study.jdbc.mutidatasource;
+package com.yicj.study.jdbc.mutidatasource.client1;
 
+import com.yicj.study.jdbc.mutidatasource.DataSourceType;
+import com.yicj.study.jdbc.mutidatasource.DataSourceTypeManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,7 +20,12 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) throws SQLException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml", Main.class) ;
+        execute("beans.xml", Main.class);
+    }
+
+
+    public  static void execute(String beanName, Class<?> mainClazz) throws SQLException {
+        ApplicationContext context = new ClassPathXmlApplicationContext(beanName, mainClazz) ;
         DataSourceTypeManager.set(DataSourceType.MAIN) ;
         DataSource mainDatasource = (DataSource)context.getBean("dataSource");
         String mainCatalog = mainDatasource.getConnection().getCatalog() ;
@@ -33,6 +40,5 @@ public class Main {
         DataSource dbLinkDasource = (DataSource)context.getBean("dataSource");
         String dbLinkCatalog = dbLinkDasource.getConnection().getCatalog() ;
         System.out.println(dbLinkCatalog);
-
     }
 }

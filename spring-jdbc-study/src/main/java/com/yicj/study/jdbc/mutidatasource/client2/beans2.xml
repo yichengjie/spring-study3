@@ -52,17 +52,19 @@
         <property name="connectionProperties" value="clientEncoding=GBK" />
     </bean>
 
-    <util:map id ="dataSources" key-type="com.yicj.study.jdbc.mutidatasource.DataSourceType">
+    <!--注意这里key必须是string，MapDataSourceLookup构造函数入参Map<String, DataSource> dataSources 因为-->
+    <util:map id ="dataSources">
         <entry key ="MAIN" value-ref ="mainDataSource" />
         <entry key ="INFO" value-ref ="infoDataSource" />
         <entry key ="DBLINK" value-ref ="dblinkDataSource"/>
     </util:map>
 
     <bean id ="dataSourceLookup" class ="org.springframework.jdbc.datasource.lookup.MapDataSourceLookup">
-        <constructor-arg index="0" type="java.util.Map" ref="dataSources"/>
+        <constructor-arg type="java.util.Map" ref="dataSources"/>
     </bean>
 
-    <bean id ="dataSource" class ="com.yicj.study.jdbc.mutidatasource.ThreadLocalVariableRoutingDataSource">
+    <!--注意这个ThreadLocalVariableRoutingDataSource返回的是字符串，必须与dataSourceLookup中字符串key保持一致-->
+    <bean id ="dataSource" class ="com.yicj.study.jdbc.mutidatasource.client2.ThreadLocalVariableRoutingDataSource">
         <property name = "defaultTargetDataSource" ref ="mainDataSource" />
         <property name ="targetDataSources" ref ="dataSources" />
         <property name ="dataSourceLookup" ref ="dataSourceLookup" />

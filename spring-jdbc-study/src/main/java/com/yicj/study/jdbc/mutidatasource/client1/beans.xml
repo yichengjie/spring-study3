@@ -51,7 +51,7 @@
     </bean>
 
 
-    <bean id = "dataSource" class ="com.yicj.study.jdbc.mutidatasource.ThreadLocalVariableRoutingDataSource">
+    <bean id = "dataSource" class ="com.yicj.study.jdbc.mutidatasource.client1.ThreadLocalVariableRoutingDataSource">
         <property name = "defaultTargetDataSource" ref ="mainDataSource" />
         <property name="targetDataSources">
             <map key-type="com.yicj.study.jdbc.mutidatasource.DataSourceType">
