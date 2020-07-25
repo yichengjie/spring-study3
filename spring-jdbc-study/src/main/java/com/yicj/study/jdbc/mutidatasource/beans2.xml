@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 	">
 
     <bean id="mainDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -50,19 +52,19 @@
         <property name="connectionProperties" value="clientEncoding=GBK" />
     </bean>
 
+    <util:map id ="dataSources" key-type="com.yicj.study.jdbc.mutidatasource.DataSourceType">
+        <entry key ="MAIN" value-ref ="mainDataSource" />
+        <entry key ="INFO" value-ref ="infoDataSource" />
+        <entry key ="DBLINK" value-ref ="dblinkDataSource"/>
+    </util:map>
 
-    <bean id = "dataSource" class ="com.yicj.study.jdbc.mutidatasource.ThreadLocalVariableRoutingDataSource">
-        <property name = "defaultTargetDataSource" ref ="mainDataSource" />
-        <property name="targetDataSources">
-            <map key-type="com.yicj.study.jdbc.mutidatasource.DataSourceType">
-                <entry key ="MAIN" value-ref ="mainDataSource" />
-                <entry key ="INFO" value-ref ="infoDataSource" />
-                <entry key ="DBLINK" value-ref ="dblinkDataSource"/>
-            </map>
-        </property>
+    <bean id ="dataSourceLookup" class ="org.springframework.jdbc.datasource.lookup.MapDataSourceLookup">
+        <constructor-arg index="0" type="java.util.Map" ref="dataSources"/>
     </bean>
 
-
-
-
+    <bean id ="dataSource" class ="com.yicj.study.jdbc.mutidatasource.ThreadLocalVariableRoutingDataSource">
+        <property name = "defaultTargetDataSource" ref ="mainDataSource" />
+        <property name ="targetDataSources" ref ="dataSources" />
+        <property name ="dataSourceLookup" ref ="dataSourceLookup" />
+    </bean>
 </beans>

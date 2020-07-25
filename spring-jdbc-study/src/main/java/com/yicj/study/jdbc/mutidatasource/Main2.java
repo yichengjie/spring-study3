@@ -7,32 +7,21 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 /**
- * ClassName: Main
+ * ClassName: Main2
  * Description: TODO(描述)
- * Date: 2020/7/25 20:56
+ * Date: 2020/7/25 22:24
  *
  * @author yicj(626659321 @ qq.com)
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
-public class Main {
+public class Main2 {
 
     public static void main(String[] args) throws SQLException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml", Main.class) ;
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans2.xml", Main.class) ;
         DataSourceTypeManager.set(DataSourceType.MAIN) ;
         DataSource mainDatasource = (DataSource)context.getBean("dataSource");
         String mainCatalog = mainDatasource.getConnection().getCatalog() ;
         System.out.println(mainCatalog);
-
-        DataSourceTypeManager.set(DataSourceType.INFO) ;
-        DataSource infoDatasource = (DataSource)context.getBean("dataSource");
-        String infoCatalog = infoDatasource.getConnection().getCatalog() ;
-        System.out.println(infoCatalog);
-
-        DataSourceTypeManager.set(DataSourceType.DBLINK) ;
-        DataSource dbLinkDasource = (DataSource)context.getBean("dataSource");
-        String dbLinkCatalog = dbLinkDasource.getConnection().getCatalog() ;
-        System.out.println(dbLinkCatalog);
-
     }
 }
