@@ -54,6 +54,7 @@
     <bean id = "dataSource" class ="com.yicj.study.jdbc.mutidatasource.client1.ThreadLocalVariableRoutingDataSource">
         <property name = "defaultTargetDataSource" ref ="mainDataSource" />
         <property name="targetDataSources">
+            <!--这里的key可以使用DataSourceType，因为构造函数入参Map<Object, Object> targetDataSources-->
             <map key-type="com.yicj.study.jdbc.mutidatasource.DataSourceType">
                 <entry key ="MAIN" value-ref ="mainDataSource" />
                 <entry key ="INFO" value-ref ="infoDataSource" />

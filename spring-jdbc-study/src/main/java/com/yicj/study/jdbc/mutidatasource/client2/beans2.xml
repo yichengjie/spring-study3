@@ -53,7 +53,7 @@
     </bean>
 
     <!--注意这里key必须是string，MapDataSourceLookup构造函数入参Map<String, DataSource> dataSources 因为-->
-    <util:map id ="dataSources">
+    <util:map id ="dataSources" key-type="java.lang.String">
         <entry key ="MAIN" value-ref ="mainDataSource" />
         <entry key ="INFO" value-ref ="infoDataSource" />
         <entry key ="DBLINK" value-ref ="dblinkDataSource"/>
