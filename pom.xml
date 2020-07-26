@@ -10,6 +10,7 @@
     <modules>
         <module>spring-ioc-study</module>
         <module>spring-jdbc-study</module>
+        <module>spring-mvc-study</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
