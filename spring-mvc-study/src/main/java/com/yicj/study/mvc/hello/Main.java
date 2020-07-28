@@ -1,5 +1,11 @@
 package com.yicj.study.mvc.hello;
 
+import com.yicj.study.mvc.foo.service.FXNewsProvider;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
 /**
  * ClassName: Main
  * Description: TODO(描述)
@@ -11,5 +17,16 @@ package com.yicj.study.mvc.hello;
  */
 public class Main {
 
+    public static void main(String[] args) {
+
+        Resource resource = new ClassPathResource("beans.xml", Main.class) ;
+
+        DefaultListableBeanFactory beanFactory = new XmlBeanFactory(resource) ;
+
+        FXNewsProvider newsProvider = beanFactory.getBean("newsProvider", FXNewsProvider.class);
+
+        System.out.println(newsProvider);
+
+    }
 
 }

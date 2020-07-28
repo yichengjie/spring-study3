@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+
+    <bean id="newsListener"
+          class="com.yicj.study.mvc.foo.service.impl.DowJonesNewListener" />
+
+    <bean id="newsPersistent"
+          class="com.yicj.study.mvc.foo.service.impl.DowJonesNewsPersistent" />
+
+    <bean id="newsProvider"
+          class="com.yicj.study.mvc.foo.service.FXNewsProvider">
+        <property name="newsListener" ref="newsListener" />
+        <property name="newsPersistent" ref="newsPersistent" />
+    </bean>
+
+</beans>
