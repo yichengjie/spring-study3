@@ -2,6 +2,7 @@ package com.yicj.study.mvc.foo.service.impl;
 
 
 import com.yicj.study.mvc.foo.model.FxNewsBean;
+import com.yicj.study.mvc.foo.service.FXNewsProvider;
 import com.yicj.study.mvc.foo.service.IFXNewsListener;
 
 /**
@@ -14,6 +15,8 @@ import com.yicj.study.mvc.foo.service.IFXNewsListener;
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
 public class DowJonesNewListener implements IFXNewsListener {
+
+    private FXNewsProvider newsProvider ;
 
     @Override
     public String[] getAvailableNewsIds() {
@@ -28,5 +31,13 @@ public class DowJonesNewListener implements IFXNewsListener {
     @Override
     public void postProcessIfNecessary(String newsId) {
 
+    }
+
+    public FXNewsProvider getNewsProvider() {
+        return newsProvider;
+    }
+
+    public void setNewsProvider(FXNewsProvider newsProvider) {
+        this.newsProvider = newsProvider;
     }
 }

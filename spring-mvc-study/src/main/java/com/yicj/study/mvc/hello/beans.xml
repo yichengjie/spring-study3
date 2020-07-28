@@ -6,7 +6,9 @@
 	">
 
     <bean id="newsListener"
-          class="com.yicj.study.mvc.foo.service.impl.DowJonesNewListener" />
+          class="com.yicj.study.mvc.foo.service.impl.DowJonesNewListener">
+        <property name="newsProvider" ref="newsProvider" />
+    </bean>
 
     <bean id="newsPersistent"
           class="com.yicj.study.mvc.foo.service.impl.DowJonesNewsPersistent" />
