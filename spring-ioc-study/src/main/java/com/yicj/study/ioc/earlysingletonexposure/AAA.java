@@ -1,4 +1,4 @@
-package com.yicj.study.ioc.cyclicdependence;
+package com.yicj.study.ioc.earlysingletonexposure;
 
 /**
  * ClassName: AAA

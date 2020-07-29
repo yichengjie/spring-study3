@@ -1,4 +1,4 @@
-package com.yicj.study.ioc.cyclicdependence;
+package com.yicj.study.ioc.earlysingletonexposure;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
 
+    //https://blog.csdn.net/qq_18297675/article/details/103674833
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml", Main.class);
