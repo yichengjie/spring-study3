@@ -3,6 +3,7 @@ package com.yicj.study.ioc.earlysingletonexposure;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.cglib.core.DebuggingClassWriter;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
@@ -63,6 +64,9 @@ public class CCC implements BeanPostProcessor {
     }
 
     public static void main(String[] args) {
+        //System.setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true") ;
+        //System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "D:\\code\\idea\\spring-study3\\spring-ioc-study\\");
         AAA aaa = new AAA() ;
         Object proxy = new CGLIBProxy(aaa).createProxy();
         ((AAA)proxy).hello();

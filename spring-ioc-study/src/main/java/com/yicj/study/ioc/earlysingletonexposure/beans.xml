@@ -14,5 +14,5 @@
         <property name="aaa" ref="aaa" />
     </bean>
 
-    <bean id="ccc" class="com.yicj.study.ioc.earlysingletonexposure.CCC" />
+    <!--<bean id="ccc" class="com.yicj.study.ioc.earlysingletonexposure.CCC" />-->
 </beans>
