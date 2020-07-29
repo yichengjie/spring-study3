@@ -4,19 +4,18 @@
        xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
-
     <bean id="newsListener"
-          class="com.yicj.study.mvc.foo.service.impl.DowJonesNewListener">
+          class="com.yicj.study.ioc.foo.service.impl.DowJonesNewListener">
         <property name="newsProvider" ref="newsProvider" />
     </bean>
 
-    <bean id="newsPersistent"
-          class="com.yicj.study.mvc.foo.service.impl.DowJonesNewsPersistent" />
-
     <bean id="newsProvider"
-          class="com.yicj.study.mvc.foo.service.FXNewsProvider">
+          class="com.yicj.study.ioc.foo.service.FXNewsProvider">
         <property name="newsListener" ref="newsListener" />
-        <property name="newsPersistent" ref="newsPersistent" />
+    </bean>
+
+    <bean id="txProxy" class="com.yicj.study.ioc.foo.service.TXProxyFactoryBean" >
+        <property name="clazzName" value="com.yicj.study.ioc.foo.model.FxNewsBean" />
     </bean>
 
 </beans>

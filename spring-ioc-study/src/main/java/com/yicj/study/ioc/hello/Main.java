@@ -1,6 +1,5 @@
-package com.yicj.study.mvc.hello;
+package com.yicj.study.ioc.hello;
 
-import com.yicj.study.mvc.foo.service.FXNewsProvider;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -23,9 +22,9 @@ public class Main {
 
         DefaultListableBeanFactory beanFactory = new XmlBeanFactory(resource) ;
 
-        FXNewsProvider newsProvider = beanFactory.getBean("newsProvider", FXNewsProvider.class);
+        Object txProxy = beanFactory.getBean("newsProvider");
 
-        System.out.println(newsProvider);
+        System.out.println(txProxy);
 
     }
 
