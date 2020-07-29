@@ -13,6 +13,10 @@ public class AAA {
 
     private BBB bbb ;
 
+    public void hello(){
+        System.out.println("AAA.hello() ....");
+    }
+
     public BBB getBbb() {
         return bbb;
     }

@@ -37,7 +37,7 @@ public class CCC implements BeanPostProcessor {
 
 
 
-    public class CGLIBProxy implements MethodInterceptor {
+    public static class CGLIBProxy implements MethodInterceptor {
         private Object target ;
 
         public CGLIBProxy(Object target){
@@ -55,9 +55,16 @@ public class CCC implements BeanPostProcessor {
         @Override
         public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
             log.info("----{} 方法开始", method.getName());
-            Object ret = method.invoke(target, args) ;
+            //Object ret = method.invoke(target, args) ;
+            Object ret = methodProxy.invokeSuper(o, args);
             log.info("----{} 方法结束", method.getName());
             return ret;
         }
+    }
+
+    public static void main(String[] args) {
+        AAA aaa = new AAA() ;
+        Object proxy = new CGLIBProxy(aaa).createProxy();
+        ((AAA)proxy).hello();
     }
 }
