@@ -1,5 +1,7 @@
 package com.yicj.study.ioc.earlysingletonexposure;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * ClassName: AAA
  * Description: TODO(描述)
@@ -9,12 +11,13 @@ package com.yicj.study.ioc.earlysingletonexposure;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
+@Slf4j
 public class AAA {
 
     private BBB bbb ;
 
-    public void hello(){
-        System.out.println("AAA.hello() ....");
+    public void hello(String name, Integer age){
+       log.info("AAA.hello() name: {}, age:{}", name, age);
     }
 
     public BBB getBbb() {
