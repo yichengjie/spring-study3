@@ -3,8 +3,6 @@ package com.yicj.study.aop.advice;
 import com.yicj.study.aop.component.MethodCounter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.AfterReturningAdvice;
-import org.springframework.aop.MethodBeforeAdvice;
-
 import java.lang.reflect.Method;
 
 /**
@@ -18,6 +16,12 @@ import java.lang.reflect.Method;
  */
 @Slf4j
 public class CountingAfterAdvice extends MethodCounter implements AfterReturningAdvice {
+
+    /**
+     * 0 = {MethodBeforeAdviceAdapter@1678}
+     * 1 = {AfterReturningAdviceAdapter@1681}
+     * 2 = {ThrowsAdviceAdapter@1682}
+     */
     @Override
     public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
         log.info("=====> after return advice executed !");
