@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
         Object testAop = beanFactory.getBean("testAop");
-        MethodCounter methodCounter = beanFactory.getBean("testAdvice", MethodCounter.class);
+        MethodCounter methodCounter = beanFactory.getBean("beforeAdvice", MethodCounter.class);
         System.out.println("method count : " + methodCounter.getCalls());
         ((IHello)testAop).hello("张三") ;
         System.out.println("method count : " + methodCounter.getCalls());

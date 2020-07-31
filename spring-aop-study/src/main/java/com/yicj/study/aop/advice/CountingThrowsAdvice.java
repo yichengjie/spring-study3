@@ -19,6 +19,11 @@ import java.io.UncheckedIOException;
 @Slf4j
 public class CountingThrowsAdvice extends MethodCounter implements ThrowsAdvice {
 
+    // 注意事项
+    // 1. 方法名必须为afterThrowing
+    // 2. 可传一个参数：Throwable ex
+    // 3. 可传四个参数：Method method, Object[] args, MethodInvocation mi, Throwable ex
+
     // ThrowsAdvice没有指定需要实现的接口方法，它在抛出异常时被调用，这个回调是aop使用反射机制来完成的。
     public void afterThrowing(IOException ex) throws Throwable{
         count(IOException.class.getName());
