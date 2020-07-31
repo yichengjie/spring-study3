@@ -1,6 +1,6 @@
-package com.yicj.study.aop.beforeadvice;
+package com.yicj.study.aop.advice;
 
-import com.yicj.study.foo.MethodCounter;
+import com.yicj.study.aop.component.MethodCounter;
 import org.springframework.aop.MethodBeforeAdvice;
 
 import java.lang.reflect.Method;
@@ -19,9 +19,5 @@ public class CountingBeforeAdvice extends MethodCounter implements MethodBeforeA
     @Override
     public void before(Method method, Object[] args, Object target) throws Throwable {
         count(method);
-    }
-
-    public static void main(String[] args) {
-        System.out.println("-----");
     }
 }

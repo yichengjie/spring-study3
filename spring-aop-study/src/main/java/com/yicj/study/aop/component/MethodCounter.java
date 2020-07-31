@@ -1,4 +1,4 @@
-package com.yicj.study.foo;
+package com.yicj.study.aop.component;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;

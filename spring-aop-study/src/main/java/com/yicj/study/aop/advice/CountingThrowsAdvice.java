@@ -1,6 +1,6 @@
-package com.yicj.study.aop.throwsadvice;
+package com.yicj.study.aop.advice;
 
-import com.yicj.study.foo.MethodCounter;
+import com.yicj.study.aop.component.MethodCounter;
 import org.springframework.aop.ThrowsAdvice;
 
 import java.io.IOException;
