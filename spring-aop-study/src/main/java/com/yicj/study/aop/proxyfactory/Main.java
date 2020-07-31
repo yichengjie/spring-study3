@@ -26,10 +26,10 @@ public class Main {
         pf.addAdvice(advice);
 
         IHello proxy = (IHello) pf.getProxy();
-        proxy.hello("张三") ;
-        proxy.hello("李四") ;
-        proxy.hello("王五") ;
-        proxy.hello("赵六") ;
+//        proxy.hello("张三") ;
+//        proxy.hello("李四") ;
+//        proxy.hello("王五") ;
+//        proxy.hello("赵六") ;
 
 
         int calls = advice.getCalls();
