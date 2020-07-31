@@ -1,6 +1,5 @@
 package com.yicj.study.aop.proxyfactorybean;
 
-import com.yicj.study.aop.advice.CountingBeforeAdvice;
 import com.yicj.study.aop.component.ClassPathXmlBeanFactory;
 import com.yicj.study.aop.component.MethodCounter;
 import com.yicj.study.aop.foo.IHello;

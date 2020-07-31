@@ -5,11 +5,20 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
 
-	<bean id="testAdvice" class="com.yicj.study.aop.advice.CountingBeforeAdvice" />
+	<bean id="beforeAdvice" class="com.yicj.study.aop.advice.CountingBeforeAdvice" />
+	<bean id="throwsAdvice" class="com.yicj.study.aop.advice.CountingThrowsAdvice"  />
+	<bean id="afterAdvice" class="com.yicj.study.aop.advice.CountingAfterAdvice"  />
 
-	<bean id="testAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
-		<property name="advice" ref="testAdvice" />
+	<bean id="beforeAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="beforeAdvice" />
 	</bean>
+	<bean id="throwsAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="throwsAdvice" />
+	</bean>
+	<bean id="afterAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="afterAdvice" />
+	</bean>
+
 
 	<bean id="testAop" class="org.springframework.aop.framework.ProxyFactoryBean" >
 		<property name="proxyInterfaces" value="com.yicj.study.aop.foo.IHello" />
@@ -18,7 +27,9 @@
 		</property>
 		<property name="interceptorNames">
 			<list>
-				<value>testAdvisor</value>
+				<value>beforeAdvisor</value>
+				<value>throwsAdvisor</value>
+				<value>afterAdvisor</value>
 			</list>
 		</property>
 	</bean>

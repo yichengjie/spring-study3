@@ -2,25 +2,25 @@ package com.yicj.study.aop.advice;
 
 import com.yicj.study.aop.component.MethodCounter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
 
 import java.lang.reflect.Method;
 
 /**
- * ClassName: CountingBeforeAdvice
+ * ClassName: CountingAfterAdvice
  * Description: TODO(描述)
- * Date: 2020/7/30 10:26
+ * Date: 2020/7/31 14:30
  *
  * @author yicj(626659321 @ qq.com)
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
 @Slf4j
-public class CountingBeforeAdvice extends MethodCounter implements MethodBeforeAdvice {
-    // 实现before回调接口，这是接口MethodBeforeAdvice的要求
+public class CountingAfterAdvice extends MethodCounter implements AfterReturningAdvice {
     @Override
-    public void before(Method method, Object[] args, Object target) throws Throwable {
-        log.info("=====> method before advice executed");
+    public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
+        log.info("=====> after return advice executed !");
         count(method);
     }
 }

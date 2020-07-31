@@ -1,6 +1,7 @@
 package com.yicj.study.aop.advice;
 
 import com.yicj.study.aop.component.MethodCounter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.ThrowsAdvice;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.io.UncheckedIOException;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
+@Slf4j
 public class CountingThrowsAdvice extends MethodCounter implements ThrowsAdvice {
 
     // ThrowsAdvice没有指定需要实现的接口方法，它在抛出异常时被调用，这个回调是aop使用反射机制来完成的。
@@ -23,6 +25,7 @@ public class CountingThrowsAdvice extends MethodCounter implements ThrowsAdvice 
     }
 
     public void afterThrowing(UncheckedIOException ex) throws Throwable{
+        log.info("=====> throws advice executed !");
         count(UncheckedIOException.class.getName());
     }
 }
