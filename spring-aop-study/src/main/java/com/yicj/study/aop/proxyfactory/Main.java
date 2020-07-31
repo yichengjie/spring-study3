@@ -3,7 +3,6 @@ package com.yicj.study.aop.proxyfactory;
 import com.yicj.study.aop.advice.CountingBeforeAdvice;
 import com.yicj.study.aop.foo.IHello;
 import com.yicj.study.aop.foo.impl.HelloImpl;
-import org.aopalliance.aop.Advice;
 import org.springframework.aop.framework.ProxyFactory;
 
 /**
@@ -22,7 +21,7 @@ public class Main {
         CountingBeforeAdvice advice  = new CountingBeforeAdvice();
         ProxyFactory pf = new ProxyFactory() ;
         // 指定针对接口代理
-        //pf.setInterfaces(target.getClass().getInterfaces());
+        pf.setInterfaces(target.getClass().getInterfaces());
         pf.setTarget(target);
         pf.addAdvice(advice);
 
