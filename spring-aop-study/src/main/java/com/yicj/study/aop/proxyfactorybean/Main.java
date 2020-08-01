@@ -18,17 +18,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        testResourceLoader();
+        testProxyFactoryBean();
     }
-
-    private static void testResourceLoader(){
-        BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml") ;
-        System.out.println(beanFactory);
-    }
-
 
     private static void testProxyFactoryBean(){
-        BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
+        BeanFactory beanFactory = new ClassPathXmlBeanFactory("com/yicj/study/aop/proxyfactorybean/beans.xml") ;
+        //BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
         Object testAop = beanFactory.getBean("testAop");
         MethodCounter methodCounter = beanFactory.getBean("beforeAdvice", MethodCounter.class);
         System.out.println("method count : " + methodCounter.getCalls());
