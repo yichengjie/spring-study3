@@ -20,7 +20,7 @@ public class Main {
     }
 
 
-    public static void testAnno(){
+    private static void testAnno(){
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppBeanConfiguration.class);
         FXNewsProvider newsProvider = (FXNewsProvider)context.getBean("newsProvider");
         System.out.println(newsProvider);
@@ -28,7 +28,7 @@ public class Main {
         System.out.println(newsProvider.getNewsPersistent());
     }
 
-    public static void testRegister(){
+    private static void testRegister(){
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppBeanConfiguration.class);
         // application.scan("com.yicj.study") ;
