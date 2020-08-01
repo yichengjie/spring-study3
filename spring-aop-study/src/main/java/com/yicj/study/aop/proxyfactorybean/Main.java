@@ -17,6 +17,17 @@ import org.springframework.beans.factory.BeanFactory;
 public class Main {
 
     public static void main(String[] args) {
+
+        testResourceLoader();
+    }
+
+    private static void testResourceLoader(){
+        BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml") ;
+        System.out.println(beanFactory);
+    }
+
+
+    private static void testProxyFactoryBean(){
         BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
         Object testAop = beanFactory.getBean("testAop");
         MethodCounter methodCounter = beanFactory.getBean("beforeAdvice", MethodCounter.class);

@@ -17,21 +17,21 @@ import org.springframework.core.io.Resource;
 public class ClassPathXmlBeanFactory extends DefaultListableBeanFactory{
 
     public ClassPathXmlBeanFactory(String configLocation){
-        Resource resource = new ClassPathResource(configLocation) ;
-        this.load(resource);
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this) ;
+        reader.loadBeanDefinitions(configLocation) ;
     }
 
     public ClassPathXmlBeanFactory(String configLocation, Class<?> clazz){
-        Resource resource = new ClassPathResource(configLocation, clazz) ;
-        this.load(resource);
+        ClassPathResource resource = new ClassPathResource(configLocation, clazz) ;
+        this.loadByResource(resource);
     }
 
     public ClassPathXmlBeanFactory(Resource resource){
-        this.load(resource);
+        this.loadByResource(resource);
     }
 
-    private void load(Resource resource){
-        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(this) ;
-        xmlBeanDefinitionReader.loadBeanDefinitions(resource) ;
+    private void loadByResource(Resource resource){
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this) ;
+        reader.loadBeanDefinitions(resource) ;
     }
 }
