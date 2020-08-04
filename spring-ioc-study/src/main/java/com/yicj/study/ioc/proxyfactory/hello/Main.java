@@ -1,5 +1,6 @@
 package com.yicj.study.ioc.proxyfactory.hello;
 
+import com.yicj.study.ioc.foo.model.FxNewsBean;
 import com.yicj.study.ioc.proxyfactory.hello.service.IHello;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.util.ClassUtils;
@@ -19,6 +20,7 @@ public class Main {
         MyHelloInterceptor interceptor = new MyHelloInterceptor() ;
         ClassLoader defaultClassLoader = ClassUtils.getDefaultClassLoader();
         IHello helloProxy = (IHello) new ProxyFactory(IHello.class, interceptor).getProxy(defaultClassLoader);
-        helloProxy.hello() ;
+        FxNewsBean retInfo = helloProxy.hello();
+        System.out.println(retInfo);
     }
 }

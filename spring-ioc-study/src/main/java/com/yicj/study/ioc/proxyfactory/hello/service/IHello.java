@@ -1,5 +1,7 @@
 package com.yicj.study.ioc.proxyfactory.hello.service;
 
+import com.yicj.study.ioc.foo.model.FxNewsBean;
+
 /**
  * ClassName: IHello
  * Description: TODO(描述)
@@ -11,5 +13,5 @@ package com.yicj.study.ioc.proxyfactory.hello.service;
  */
 public interface IHello {
 
-    String hello() ;
+    FxNewsBean hello() ;
 }

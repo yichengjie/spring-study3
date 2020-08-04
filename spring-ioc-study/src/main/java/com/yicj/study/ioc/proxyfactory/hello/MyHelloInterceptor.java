@@ -1,5 +1,6 @@
 package com.yicj.study.ioc.proxyfactory.hello;
 
+import com.yicj.study.ioc.foo.model.FxNewsBean;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
@@ -17,6 +18,7 @@ public class MyHelloInterceptor implements MethodInterceptor {
     public Object invoke(MethodInvocation invocation) throws Throwable {
         System.out.println("客户端代理执.....");
         System.out.println("这里是其他的业务执行...");
-        return null;
+        //return "hello world";
+        return new FxNewsBean() ;
     }
 }
