@@ -6,9 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter;
-import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
-
-import java.util.Properties;
 
 /**
  * ClassName: AppConfig
@@ -32,15 +29,6 @@ public class HttpRootConfig {
         exporter.setService(userService);
         exporter.setServiceInterface(IUserService.class);
         return exporter ;
-    }
-
-    @Bean
-    public SimpleUrlHandlerMapping handlerMapping(){
-        Properties properties = new Properties() ;
-        properties.setProperty("/user/userService", "userServiceRemote") ;
-        SimpleUrlHandlerMapping handlerMapping = new SimpleUrlHandlerMapping() ;
-        handlerMapping.setMappings(properties);
-        return handlerMapping ;
     }
 
 }
