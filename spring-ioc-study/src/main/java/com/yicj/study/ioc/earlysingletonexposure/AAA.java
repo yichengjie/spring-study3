@@ -16,8 +16,9 @@ public class AAA {
 
     private BBB bbb ;
 
-    public void hello(String name, Integer age){
+    public String hello(String name, Integer age){
        log.info("AAA.hello() name: {}, age:{}", name, age);
+       return "hello wrold";
     }
 
     public BBB getBbb() {
