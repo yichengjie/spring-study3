@@ -27,7 +27,7 @@ public class HttpWebConfig {
 
 
     @ResponseBody
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String hello(){
 
         return "hello world" ;

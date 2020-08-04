@@ -12,7 +12,7 @@
 	<context:component-scan base-package="com.yicj.rpc.service" />
 
 	<bean id="proxy" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
-		<property name="serviceUrl" value="http://localhost:8080/user/userService" />
+		<property name="serviceUrl" value="http://localhost:8080/springrpchttp/user/userService" />
 		<property name="serviceInterface" value="com.yicj.rpc.remote.IUserService" />
 	</bean>
 
