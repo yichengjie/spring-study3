@@ -15,6 +15,7 @@
         <module>spring-security-study</module>
         <module>spring-orm-study</module>
         <module>spring-tx-study</module>
+        <module>spring-rpc-study</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
