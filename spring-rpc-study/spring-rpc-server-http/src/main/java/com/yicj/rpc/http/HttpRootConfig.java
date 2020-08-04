@@ -21,7 +21,7 @@ import java.util.Properties;
  */
 @ComponentScan("com.yicj.rpc.remote")
 @Configuration
-public class AppConfig {
+public class HttpRootConfig {
 
     @Autowired
     private IUserService userService ;
