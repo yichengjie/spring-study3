@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
 
-    <artifactId>spring-rpc-server-http</artifactId>
+    <artifactId>spring-rpc-server</artifactId>
 
     <dependencies>
         <dependency>
@@ -68,6 +68,11 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
         </dependency>
     </dependencies>
 

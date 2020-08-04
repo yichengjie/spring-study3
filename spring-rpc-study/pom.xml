@@ -12,8 +12,8 @@
     <artifactId>spring-rpc-study</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-rpc-server-http</module>
-        <module>spring-rpc-client-http</module>
+        <module>spring-rpc-server</module>
+        <module>spring-rpc-client</module>
     </modules>
 
 
