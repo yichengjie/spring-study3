@@ -1,10 +1,10 @@
-package com.yicj.study.ioc.foo.config;
+package com.yicj.study.foo.config;
 
-import com.yicj.study.ioc.foo.service.FXNewsProvider;
-import com.yicj.study.ioc.foo.service.IFXNewsListener;
-import com.yicj.study.ioc.foo.service.IFXNewsPersistent;
-import com.yicj.study.ioc.foo.service.impl.DowJonesNewListener;
-import com.yicj.study.ioc.foo.service.impl.DowJonesNewsPersistent;
+import com.yicj.study.foo.service.FXNewsProvider;
+import com.yicj.study.foo.service.IFXNewsListener;
+import com.yicj.study.foo.service.IFXNewsPersistent;
+import com.yicj.study.foo.service.impl.DowJonesNewListener;
+import com.yicj.study.foo.service.impl.DowJonesNewsPersistent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

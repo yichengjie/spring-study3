@@ -1,7 +1,7 @@
 package com.yicj.study.ioc.createbeanviacode;
 
-import com.yicj.study.ioc.foo.service.FXNewsProvider;
-import com.yicj.study.ioc.foo.service.IFXNewsListener;
+import com.yicj.study.foo.service.FXNewsProvider;
+import com.yicj.study.foo.service.IFXNewsListener;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -1,7 +1,7 @@
 package com.yicj.study.ioc.annoconfapplicationcontext;
 
-import com.yicj.study.ioc.foo.config.AppBeanConfiguration;
-import com.yicj.study.ioc.foo.service.FXNewsProvider;
+import com.yicj.study.foo.config.AppBeanConfiguration;
+import com.yicj.study.foo.service.FXNewsProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

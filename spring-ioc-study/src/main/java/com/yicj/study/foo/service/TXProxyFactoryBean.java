@@ -1,4 +1,4 @@
-package com.yicj.study.ioc.foo.service;
+package com.yicj.study.foo.service;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.util.ClassUtils;

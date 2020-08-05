@@ -1,6 +1,6 @@
 package com.yicj.study.ioc.proxyfactory.hello;
 
-import com.yicj.study.ioc.foo.model.FxNewsBean;
+import com.yicj.study.foo.model.FxNewsBean;
 import com.yicj.study.ioc.proxyfactory.hello.service.IHello;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.util.ClassUtils;

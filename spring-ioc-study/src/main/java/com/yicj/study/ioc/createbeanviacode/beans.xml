@@ -5,8 +5,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
 
-	<bean id="newsListener" class="com.yicj.study.ioc.foo.service.impl.DowJonesNewListener" />
+	<bean id="newsListener" class="com.yicj.study.foo.service.impl.DowJonesNewListener" />
 
-	<bean id="newsPersistent" class="com.yicj.study.ioc.foo.service.impl.DowJonesNewsPersistent" />
+	<bean id="newsPersistent" class="com.yicj.study.foo.service.impl.DowJonesNewsPersistent" />
 
 </beans>

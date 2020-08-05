@@ -1,6 +1,6 @@
 package com.yicj.study.ioc.proxyfactory.hello.service;
 
-import com.yicj.study.ioc.foo.model.FxNewsBean;
+import com.yicj.study.foo.model.FxNewsBean;
 
 /**
  * ClassName: IHello

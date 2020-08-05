@@ -1,7 +1,7 @@
 package com.yicj.study.ioc.beanpostprocessor;
 
-import com.yicj.study.ioc.foo.model.FxNewsBean;
-import com.yicj.study.ioc.foo.service.IFXNewsListener;
+import com.yicj.study.foo.model.FxNewsBean;
+import com.yicj.study.foo.service.IFXNewsListener;
 import lombok.Getter;
 import lombok.Setter;
 

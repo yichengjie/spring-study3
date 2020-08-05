@@ -1,6 +1,6 @@
-package com.yicj.study.ioc.foo.service.impl;
+package com.yicj.study.foo.service.impl;
 
-import com.yicj.study.ioc.foo.service.IFXNewsPersistent;
+import com.yicj.study.foo.service.IFXNewsPersistent;
 
 /**
  * ClassName: DowJonesNewsPersistent

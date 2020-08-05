@@ -1,5 +1,7 @@
-package com.yicj.study.ioc.earlysingletonexposure;
+package com.yicj.study.ioc.dynamic;
 
+import com.yicj.study.ioc.earlysingletonexposure.AAA;
+import com.yicj.study.ioc.earlysingletonexposure.CCC;
 import org.springframework.cglib.core.DebuggingClassWriter;
 
 /**

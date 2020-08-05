@@ -1,4 +1,4 @@
-package com.yicj.study.ioc.foo.model;
+package com.yicj.study.foo.model;
 
 /**
  * ClassName: FxNewsBean

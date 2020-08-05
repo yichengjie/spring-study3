@@ -5,17 +5,17 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
     <bean id="newsListener"
-          class="com.yicj.study.ioc.foo.service.impl.DowJonesNewListener">
+          class="com.yicj.study.foo.service.impl.DowJonesNewListener">
         <property name="newsProvider" ref="newsProvider" />
     </bean>
 
     <bean id="newsProvider"
-          class="com.yicj.study.ioc.foo.service.FXNewsProvider">
+          class="com.yicj.study.foo.service.FXNewsProvider">
         <property name="newsListener" ref="newsListener" />
     </bean>
 
-    <bean id="txProxy" class="com.yicj.study.ioc.foo.service.TXProxyFactoryBean" >
-        <property name="clazzName" value="com.yicj.study.ioc.foo.model.FxNewsBean" />
+    <bean id="txProxy" class="com.yicj.study.foo.service.TXProxyFactoryBean" >
+        <property name="clazzName" value="com.yicj.study.foo.model.FxNewsBean" />
     </bean>
 
 </beans>
