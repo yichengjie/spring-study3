@@ -21,7 +21,8 @@ public class IgnoreAutowiringProcessor implements BeanFactoryPostProcessor {
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         // 这里表示的是忽略属性类型为ArrayList的自动注入
         // 也就是说ListHolder中的属性类型必须为ArrayList的才会被忽略
-        //beanFactory.ignoreDependencyType(ArrayList.class);
-        beanFactory.ignoreDependencyType(List.class);
+        beanFactory.ignoreDependencyType(ArrayList.class);
+        // 下面这个将仍然会被注入
+        //beanFactory.ignoreDependencyType(List.class);
     }
 }
