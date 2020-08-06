@@ -14,13 +14,13 @@ import java.util.List;
  */
 public class ListHolder {
 
-    private ArrayList<String> list;
+    private List<String> list;
 
-    public ArrayList<String> getList() {
+    public List<String> getList() {
         return list;
     }
 
-    public void setList(ArrayList<String> list) {
+    public void setList(List<String> list) {
         this.list = list;
     }
 }

@@ -14,6 +14,7 @@ import org.springframework.beans.factory.BeanFactory;
  */
 public class Main {
 
+    // 注意string是不会被自动注入的
     public static void main(String[] args) {
 
         BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;

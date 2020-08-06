@@ -18,11 +18,11 @@ public class Main {
     public static void main(String[] args) {
 
         ConfigurableListableBeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
-
-        ListHolder bean = beanFactory.getBean(ListHolder.class);
-
+        // beanFactory post processor执行
         IgnoreAutowiringProcessor processor = new IgnoreAutowiringProcessor() ;
         processor.postProcessBeanFactory(beanFactory);
+
+        ListHolder bean = beanFactory.getBean(ListHolder.class);
 
         System.out.println(bean.getList());
     }

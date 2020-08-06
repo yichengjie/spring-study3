@@ -19,10 +19,11 @@ public class NewBeanHolder implements FxNewBeanAware {
         return newsBean;
     }
 
-    public void setNewsBean(FxNewsBean newsBean) {
+    public void setXXX(FxNewsBean newsBean) {
         this.newsBean = newsBean;
     }
 
+    // 由于这个方法与FxNewBeanAware中方法同名称所有不会被执行依赖注入
     @Override
     public void setFxNewsBean(FxNewsBean fxNewsBean) {
         this.newsBean = fxNewsBean ;

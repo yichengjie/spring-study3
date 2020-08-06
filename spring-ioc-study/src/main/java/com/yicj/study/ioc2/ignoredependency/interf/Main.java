@@ -14,10 +14,14 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
  */
 public class Main {
 
+    //default-autowire="byType" 会扫描setter方法进行注入(所有以set开头的方法都会被扫描)
     public static void main(String[] args) {
+        //1. 创建BeanFactory
         ConfigurableListableBeanFactory beanFactory =
                 new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
+        //2. 执行BeanFactory 后置处理器
         new MyIgnoreProcessor().postProcessBeanFactory(beanFactory);
+        //3. 从ioc容器中获取bean
         NewBeanHolder bean = beanFactory.getBean(NewBeanHolder.class);
         System.out.println(bean.getNewsBean());
     }
