@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-       default-autowire="byType">
+       >
 
     <bean id="list" class="java.util.ArrayList">
         <constructor-arg>
@@ -14,6 +14,8 @@
         </constructor-arg>
     </bean>
 
-    <bean id="listHolder" class="com.yicj.study.ioc2.ignoredependency.type.ListHolder" />
+    <bean id="listHolder" class="com.yicj.study.ioc2.ignoredependency.type.ListHolder" autowire="byType" >
+        <!--<property name="list" ref="list" />-->
+    </bean>
 
 </beans>
