@@ -22,4 +22,9 @@ public class NewBeanHolder implements FxNewBeanAware {
     public void setNewsBean(FxNewsBean newsBean) {
         this.newsBean = newsBean;
     }
+
+    @Override
+    public void setFxNewsBean(FxNewsBean fxNewsBean) {
+        this.newsBean = fxNewsBean ;
+    }
 }

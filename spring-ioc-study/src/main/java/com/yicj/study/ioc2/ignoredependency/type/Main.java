@@ -2,6 +2,7 @@ package com.yicj.study.ioc2.ignoredependency.type;
 
 import com.yicj.study.component.ClassPathXmlBeanFactory;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 /**
  * ClassName: Main
@@ -16,9 +17,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
+        ConfigurableListableBeanFactory beanFactory = new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
 
         ListHolder bean = beanFactory.getBean(ListHolder.class);
+
+        IgnoreAutowiringProcessor processor = new IgnoreAutowiringProcessor() ;
+        processor.postProcessBeanFactory(beanFactory);
 
         System.out.println(bean.getList());
     }

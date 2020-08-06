@@ -1,7 +1,7 @@
 package com.yicj.study.ioc2.ignoredependency.interf;
 
 import com.yicj.study.component.ClassPathXmlBeanFactory;
-import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 /**
  * ClassName: Main
@@ -15,8 +15,9 @@ import org.springframework.beans.factory.BeanFactory;
 public class Main {
 
     public static void main(String[] args) {
-        BeanFactory beanFactory =
+        ConfigurableListableBeanFactory beanFactory =
                 new ClassPathXmlBeanFactory("beans.xml", Main.class) ;
+        new MyIgnoreProcessor().postProcessBeanFactory(beanFactory);
         NewBeanHolder bean = beanFactory.getBean(NewBeanHolder.class);
         System.out.println(bean.getNewsBean());
     }

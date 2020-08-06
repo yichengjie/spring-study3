@@ -13,5 +13,5 @@ import com.yicj.study.foo.model.FxNewsBean;
  */
 public interface FxNewBeanAware {
 
-    void setNewsBean(FxNewsBean newsBean) ;
+    void setFxNewsBean(FxNewsBean fxNewsBean) ;
 }
