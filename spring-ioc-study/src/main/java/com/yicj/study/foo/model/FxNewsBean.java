@@ -1,5 +1,7 @@
 package com.yicj.study.foo.model;
 
+import lombok.Data;
+
 /**
  * ClassName: FxNewsBean
  * Description: TODO(描述)
@@ -9,5 +11,7 @@ package com.yicj.study.foo.model;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
+@Data
 public class FxNewsBean {
+    private String name ;
 }

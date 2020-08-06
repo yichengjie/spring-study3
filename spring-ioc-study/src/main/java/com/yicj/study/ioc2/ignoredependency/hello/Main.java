@@ -1,8 +1,12 @@
 package com.yicj.study.ioc2.ignoredependency.hello;
 
+import com.yicj.study.ioc2.ignoredependency.interf.NewBeanHolder;
 import com.yicj.study.ioc2.ignoredependency.other.HelloB;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.util.ClassUtils;
+import org.springframework.util.StringUtils;
+
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 
@@ -18,6 +22,10 @@ import java.lang.reflect.Method;
 public class Main {
 
     public static void main(String[] args) {
+        test2() ;
+    }
+
+    public static void test1(){
         //AbstractBeanDefinition mbd = BeanDefinitionBuilder.rootBeanDefinition(HelloB.class).getRawBeanDefinition();
         // PropertyValues pvs = mbd.getPropertyValues();
         HelloB helloB = new HelloB() ;
@@ -28,5 +36,16 @@ public class Main {
             Method wm = pd.getWriteMethod();
             System.out.println(wm !=null ? wm.getName() : null);
         }
+    }
+
+
+    public static void test2(){
+        NewBeanHolder holder = new NewBeanHolder() ;
+        Class<?> beanClass = holder.getClass() ;
+        String name = "newsBean";
+        Method candidate = ClassUtils.getMethodIfAvailable(
+                beanClass, "set" + StringUtils.capitalize(name), (Class<?>[]) null);
+
+        System.out.println(candidate);
     }
 }
