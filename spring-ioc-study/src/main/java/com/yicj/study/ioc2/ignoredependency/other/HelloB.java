@@ -11,15 +11,15 @@ import org.springframework.beans.factory.BeanNameAware;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
-public class HelloB implements BeanNameAware {
+public class HelloB /*implements BeanNameAware */{
 
     private String addr ;
 
-    @Override
+  /*  @Override
     public void setBeanName(String name) {
 
         this.addr = name ;
-    }
+    }*/
 
 
     public void hello(){
