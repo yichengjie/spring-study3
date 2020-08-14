@@ -1,6 +1,5 @@
 package com.yicj.study.jdbc.mutidatasource;
 
-import com.yicj.study.jdbc.mutidatasource.DataSourceType;
 
 /**
  * ClassName: DataSourceTypeManager
