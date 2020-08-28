@@ -11,7 +11,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/demo?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT" />
         <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="password" value="***" />
         <property name="maxActive" value="20" />
         <property name="initialSize" value="1" />
         <property name="maxWait" value="60000" />
@@ -26,7 +26,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/user_db?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT" />
         <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="password" value="***" />
         <property name="maxActive" value="20" />
         <property name="initialSize" value="1" />
         <property name="maxWait" value="60000" />
@@ -41,7 +41,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/user_center?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT" />
         <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="password" value="***" />
         <property name="maxActive" value="20" />
         <property name="initialSize" value="1" />
         <property name="maxWait" value="60000" />
@@ -69,4 +69,10 @@
         <property name ="targetDataSources" ref ="dataSources" />
         <property name ="dataSourceLookup" ref ="dataSourceLookup" />
     </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean class="com.yicj.study.jdbc.mutidatasource.component.PwdBeanPostProcessor" />
 </beans>

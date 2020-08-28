@@ -24,7 +24,7 @@ public class Main {
     }
 
 
-    public  static void execute(String beanName, Class<?> mainClazz) throws SQLException {
+    public static ApplicationContext execute(String beanName, Class<?> mainClazz) throws SQLException {
         ApplicationContext context = new ClassPathXmlApplicationContext(beanName, mainClazz) ;
         DataSourceTypeManager.set(DataSourceType.MAIN) ;
         DataSource mainDatasource = (DataSource)context.getBean("dataSource");
@@ -40,5 +40,6 @@ public class Main {
         DataSource dbLinkDasource = (DataSource)context.getBean("dataSource");
         String dbLinkCatalog = dbLinkDasource.getConnection().getCatalog() ;
         System.out.println(dbLinkCatalog);
+        return context ;
     }
 }
