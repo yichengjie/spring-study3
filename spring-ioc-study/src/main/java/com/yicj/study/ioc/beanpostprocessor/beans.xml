@@ -12,4 +12,6 @@
         <property name="password" value="mypassword" />
     </bean>
 
+    <bean class="com.yicj.study.ioc.beanfactorypostprocessor.MyBeanFactoryPostProcessor" />
+
 </beans>

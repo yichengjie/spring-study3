@@ -32,6 +32,6 @@ public class PasswordDecodePostProcessor implements BeanPostProcessor {
 
     private String decodePassword(String encodedPassword){
         // 实现解码逻辑
-        return encodedPassword +"123";
+        return encodedPassword +"_456";
     }
 }
